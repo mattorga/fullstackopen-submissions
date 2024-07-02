@@ -37,6 +37,7 @@ const App = () => {
   const [filterName, setFilterName] = useState('')
   const [showAll, setShowAll] = useState('') // False - filter has value
 
+  // GETS information from the db
   useEffect(() => {axios
     .get('http://localhost:3001/persons')
     .then(response =>{
@@ -44,20 +45,25 @@ const App = () => {
     })
   },[])
 
+  // POSTS (adds) data into the db
   const addPerson = (event) => {
     event.preventDefault()
     const personObject = {
       name: newName,
       number: newNumber,
-      id: persons.length + 1
     }
     
     if (persons.some(person => person.name === newName)){
       alert(`${newName} already exists`)
     } else {
-      setPersons(persons.concat(personObject))
-      setNewName('')
-      setNewNumber('')
+      axios
+        .post('http://localhost:3001/persons', personObject)
+        .then(response => response.data)
+        .then(returnedPerson => {
+          setPersons(persons.concat(returnedPerson))
+          setNewName('')
+          setNewNumber('')
+        })
     }
   }
 
