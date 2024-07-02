@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import personService from './services/persons'
 
 const Filter = ({value, onChange}) => {
   return (
@@ -38,12 +39,14 @@ const App = () => {
   const [showAll, setShowAll] = useState('') // False - filter has value
 
   // GETS information from the db
-  useEffect(() => {axios
-    .get('http://localhost:3001/persons')
-    .then(response =>{
-      setPersons(response.data)
+  useEffect(() => {
+
+    personService
+    .getAll()
+    .then(initialPersons => {
+      setPersons(initialPersons)
     })
-  },[])
+  },[]);
 
   // POSTS (adds) data into the db
   const addPerson = (event) => {
@@ -51,14 +54,13 @@ const App = () => {
     const personObject = {
       name: newName,
       number: newNumber,
-    }
+    };
     
     if (persons.some(person => person.name === newName)){
       alert(`${newName} already exists`)
     } else {
-      axios
-        .post('http://localhost:3001/persons', personObject)
-        .then(response => response.data)
+      personService
+        .create(personObject)
         .then(returnedPerson => {
           setPersons(persons.concat(returnedPerson))
           setNewName('')
