@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import personService from './services/persons'
 
 const Filter = ({value, onChange}) => {
@@ -29,7 +28,11 @@ const PersonForm = (props) => {
   )
 }
 
-const Persons = ({persons}) => persons.map(person => <p key={person.id}>{person.name} {person.number}</p>)
+const Persons = ({person, remove}) =>  
+  <p key={person.id}>
+    {person.name} {person.number}
+    <button onClick={remove}>delete</button>
+  </p>
 
 const App = () => {
   const [persons, setPersons] = useState([])
@@ -40,12 +43,13 @@ const App = () => {
 
   // GETS information from the db
   useEffect(() => {
-
     personService
     .getAll()
     .then(initialPersons => {
       setPersons(initialPersons)
-    })
+    }).catch(error =>
+      console.log('fail')
+    )
   },[]);
 
   // POSTS (adds) data into the db
@@ -66,7 +70,20 @@ const App = () => {
           setNewName('')
           setNewNumber('')
         })
+        .catch(error => {
+          console.log('fail')
+        })
     }
+  }
+  const deletePerson = id => {
+
+    const remainingPersons = persons.filter(person => id !== person.id)
+
+    personService
+    .remove(id)
+    .then(deletedPerson => {
+      setPersons(remainingPersons)
+    })
   }
 
   const handleNameChange = (event) => {
@@ -104,7 +121,13 @@ const App = () => {
 
       <h2>Numbers</h2>
 
-      <Persons persons={personsToShow} />
+      {personsToShow.map(person => 
+        <Persons 
+          key={person.id} 
+          person={person}
+          remove={() => deletePerson(person.id)}
+        />
+       )}
 
     </div>
   )

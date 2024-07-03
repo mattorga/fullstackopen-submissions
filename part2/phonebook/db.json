@@ -1,39 +1,19 @@
 {
   "persons": [
     {
-      "name": "Arto Hellas",
-      "number": "040-123456",
-      "id": "1"
-    },
-    {
-      "name": "Ada Lovelace",
-      "number": "39-44-5323523",
-      "id": "2"
-    },
-    {
-      "name": "Dan Abramov",
-      "number": "12-43-234345",
-      "id": "3"
-    },
-    {
-      "name": "Mary Poppendieck",
-      "number": "39-23-6423122",
-      "id": "4"
-    },
-    {
-      "id": 5,
+      "id": "5",
       "name": "Matthew Orga",
       "number": "09199804664"
-    },
-    {
-      "id": "f419",
-      "name": "Lucy MacLean",
-      "number": "12345678"
     },
     {
       "id": "fa00",
       "name": "Ella Purnell",
       "number": "0987654321"
+    },
+    {
+      "id": "0d35",
+      "name": "Lucy MacLean",
+      "number": "12304908123"
     }
   ]
 }
