@@ -1,38 +1,10 @@
 import { useState, useEffect } from 'react'
 import personService from './services/persons'
 
-const Filter = ({value, onChange}) => {
-  return (
-    <div>
-      filter shown with
-      <input value={value} onChange={onChange}/>
-    </div>
-  )
-}
-
-const PersonForm = (props) => {
-  return(
-    <div>
-      <form onSubmit={props.onSubmit}>
-        <div>
-          name:
-          <input value={props.name} onChange={props.onNameChange}/>
-        </div>
-        <div>
-          number:
-          <input value={props.number} onChange={props.onNumberChange}/>
-        </div>
-        <button type="submit">add</button>
-      </form>
-    </div>
-  )
-}
-
-const Persons = ({person, remove}) =>  
-  <p key={person.id}>
-    {person.name} {person.number}
-    <button onClick={remove}>delete</button>
-  </p>
+import Filter from './components/Filter'
+import PersonForm from './components/PersonForm'
+import Persons from './components/Persons'
+import Notification from './components/Notification'
 
 const App = () => {
   const [persons, setPersons] = useState([])
@@ -40,6 +12,8 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
   const [filterName, setFilterName] = useState('')
   const [showAll, setShowAll] = useState('') // False - filter has value
+  const [notificationMessage, setNotification] = useState(null)
+  const [error, setError] = useState(null)
 
   // GETS information from the db
   useEffect(() => {
@@ -48,7 +22,7 @@ const App = () => {
     .then(initialPersons => {
       setPersons(initialPersons)
     }).catch(error =>
-      console.log('fail')
+      console.log(error)
     )
   },[]);
 
@@ -59,9 +33,32 @@ const App = () => {
       name: newName,
       number: newNumber,
     };
-    
-    if (persons.some(person => person.name === newName)){
-      alert(`${newName} already exists`)
+  
+    const target = persons.find(person => person.name === newName)
+    if (target){
+      if (target.number !== newNumber){
+        if(window.confirm(`${target.name} is already added to phonebook, replace the old number with a new one?`)){
+          const changedPerson = {...target, number: newNumber}
+          personService
+            .update(target.id, changedPerson)
+            .then(updatedPerson => {
+              setPersons(persons.map(person => person.id !== target.id ? person : updatedPerson))
+            })
+            .catch (error => {
+              console.log(error)
+              setNotification(`Information on ${target.name} has already been removed from the server`)
+              setError(true)
+
+              setTimeout(() => {
+                setNotification(null)
+                setError(null)
+              }, 5000)
+              
+            })
+        } 
+      } else {
+        alert(`${newName} is already added to the phonebook`)
+      }
     } else {
       personService
         .create(personObject)
@@ -69,21 +66,33 @@ const App = () => {
           setPersons(persons.concat(returnedPerson))
           setNewName('')
           setNewNumber('')
+          setNotification(`Added ${returnedPerson.name}`)
+          setError(false)
+
+          setTimeout(() => {
+            setNotification(null)
+            setError(null)
+          }, 5000)
+
         })
         .catch(error => {
-          console.log('fail')
+          console.log(error)
+          alert('There was an error adding the person.')
         })
     }
   }
+
+  // DELETES data from the db
   const deletePerson = id => {
+    const target = persons.find(person => id === person.id)
 
-    const remainingPersons = persons.filter(person => id !== person.id)
-
-    personService
-    .remove(id)
-    .then(deletedPerson => {
-      setPersons(remainingPersons)
-    })
+    if(window.confirm(`Delete ${target.name} ?`)){
+      personService
+      .remove(id)
+      .then(
+        setPersons(persons.filter(person => id !== person.id))
+      ).catch (error => console.log(error))
+    }
   }
 
   const handleNameChange = (event) => {
@@ -108,6 +117,8 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+
+      <Notification message={notificationMessage} isError={error}/>
 
       <Filter value={filterName} onChange={handleFilterChange}/>
 
