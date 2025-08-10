@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e84f93ee-f2ac-49d5-a338-353cf4a94689" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/backend/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/backend/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/backend/.idea/part3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/backend/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/.package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/.coveralls.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/inspector-log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/lib/browser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ee-first/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ee-first/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ee-first/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ee-first/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ms/license.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ms/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/frontend/src/services/notes.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes/frontend/src/services/notes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests/creating_new_note.rest" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/requests/creating_new_note.rest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests/get_all_notes.rest" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/requests/get_all_notes.rest" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="30K5XBQAu5L9FQuvJbKrEfuu13B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mattheworga/Documents/dev/fullstackopen-submissions/part3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.26927.40" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e84f93ee-f2ac-49d5-a338-353cf4a94689" name="Changes" comment="" />
+      <created>1753363460525</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753363460525</updated>
+      <workItem from="1753363461579" duration="4573000" />
+      <workItem from="1753503313336" duration="4054000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
