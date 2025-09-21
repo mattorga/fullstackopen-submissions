@@ -5,79 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e84f93ee-f2ac-49d5-a338-353cf4a94689" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/backend/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/backend/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/backend/.idea/part3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/backend/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/.package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/HISTORY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/basic-auth/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/.coveralls.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/component.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/node.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/browser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/debug.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/inspector-log.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/debug/src/node.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/History.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/Readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/lib/browser/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/depd/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ee-first/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ee-first/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ee-first/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ee-first/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/HISTORY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/morgan/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ms/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ms/license.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ms/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/ms/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/HISTORY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-finished/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/HISTORY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/on-headers/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook/node_modules/safe-buffer/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/backend/mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/frontend" beforeDir="false" afterPath="$PROJECT_DIR$/notes/frontend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes/frontend/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/notes/frontend/src/services/notes.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes/frontend/src/services/notes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requests/creating_new_note.rest" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/requests/creating_new_note.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requests/get_all_notes.rest" beforeDir="false" afterPath="$PROJECT_DIR$/notes/backend/requests/get_all_notes.rest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook/backend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/phonebook/backend/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/phonebook/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/phonebook/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook/frontend/dist/assets/index-DEXGyu0P.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/phonebook/frontend/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook/frontend/src/services/persons.js" beforeDir="false" afterPath="$PROJECT_DIR$/phonebook/frontend/src/services/persons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/phonebook/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +69,7 @@
       <updated>1753363460525</updated>
       <workItem from="1753363461579" duration="4573000" />
       <workItem from="1753503313336" duration="4054000" />
+      <workItem from="1758198670773" duration="424000" />
     </task>
     <servers />
   </component>
