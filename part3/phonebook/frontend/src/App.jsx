@@ -41,9 +41,14 @@ const App = () => {
         if(window.confirm(`${target.name} is already added to phonebook, replace the old number with a new one?`)){
           const changedPerson = {...target, number: newNumber}
           personService
-            .update(target.id, changedPerson)
+            .update(target._id, changedPerson)
             .then(updatedPerson => {
-              setPersons(persons.map(person => person.id !== target.id ? person : updatedPerson))
+              setPersons(persons
+                .map(person => 
+                  person._id !== target._id // Does the current person and target person ID match?
+                  ? person // Add current person to persons
+                  : updatedPerson // Add updated (response) person to persons instead
+                ))
             })
             .catch (error => {
               console.log(error)
@@ -54,7 +59,6 @@ const App = () => {
                 setNotification(null)
                 setError(null)
               }, 5000)
-
             })
         }
       } else {
@@ -74,7 +78,6 @@ const App = () => {
             setNotification(null)
             setError(null)
           }, 5000)
-
         })
         .catch(error => {
           console.log(error)
@@ -85,13 +88,13 @@ const App = () => {
 
   // DELETES data from the db
   const deletePerson = id => {
-    const target = persons.find(person => id === person.id)
+    const target = persons.find(person => id === person._id)
 
     if(window.confirm(`Delete ${target.name} ?`)){
       personService
       .remove(id)
-      .then(
-        setPersons(persons.filter(person => id !== person.id))
+      .then(       
+        setPersons(persons.filter(person => id !== person._id))
       ).catch (error => console.log(error))
     }
   }
@@ -135,11 +138,11 @@ const App = () => {
 
       {personsToShow.map(person =>
         <Persons
-          key={person.id}
+          key={person._id}
           person={person}
-          remove={() => deletePerson(person.id)}
+          remove={() => deletePerson(person._id)}
         />
-       )}
+      )}
 
     </div>
   )
