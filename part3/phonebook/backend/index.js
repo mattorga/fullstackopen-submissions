@@ -11,96 +11,98 @@ app.use(express.static('dist'))
 app.use(express.json())
 app.use(morgan('tiny'))
 
-app.get('/', (request, response) => {
+app.get('/', (request, response, next) => {
   try {
-    response.send('<h1>Hello World!</h1>');
+    response.send('<h1>Hello World!</h1>')
   } catch (error) {
     next(error)
   }
 })
 
-app.get('/api/persons', (request, response) => {
-    Person.find({}).then(result => {
-        response.json(result)
+app.get('/api/persons', (request, response, next) => {
+  Person.find({}).then(result => {
+    response.json(result)
+  }).catch(error => next(error))
+})
+
+app.get('/api/persons/:id', (request, response, next) => {
+  Person.findById(request.params.id)
+    .then(person => {
+      response.json(person)
     }).catch(error => next(error))
 })
 
-app.get('/api/persons/:id', (request, response) => {
-    const id = request.params.id
-    Person.findById(request.params.id)
-        .then(person => {
-            response.json(person)
-        }).catch(error => next(error))
-})
-
-app.get('/info', (request, response) => {
-    try{
-        response.send(`
+app.get('/info', (request, response, next) => {
+  try{
+    Person.find({}).then(persons => {
+      response.send(`
             <p>Phonebook has info for ${persons.length} people</p>
             <p>${new Date()}</p>
         `)
-    } catch(error) {
-        next(error)
-    }
+    })
+  } catch(error) {
+    next(error)
+  }
 })
 
 morgan.token('body', function getBody(req) {
-    return JSON.stringify(req.body)
+  return JSON.stringify(req.body)
 })
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 app.post('/api/persons', (request, response, next) => {
-    const body = request.body
-    if (!body.name || !body.number){
-        return response.status(400).json({
-            error: 'name or number is missing'
-        })
-    }
-
-    const person = new Person({
-        name: body.name,
-        number: body.number
+  const body = request.body
+  if (!body.name || !body.number){
+    return response.status(400).json({
+      error: 'name or number is missing'
     })
+  }
 
-    person.save()
-        .then(savedPerson => {
-            response.json(savedPerson)
-        })
-        .catch(error => next(error))
+  const person = new Person({
+    name: body.name,
+    number: body.number
+  })
+
+  person.save()
+    .then(savedPerson => {
+      response.json(savedPerson)
+    })
+    .catch(error => next(error))
 })
 
 app.put('/api/persons/:id', (request, response, next) => {
-    const updated_body = request.body
-    Person.findByIdAndUpdate(request.params.id, updated_body, {new: true}).then(result => {
-        return response.json(result)
-    }).catch(error => {
-        next(error)
-    })
+  const updated_body = request.body
+  Person.findByIdAndUpdate(request.params.id, updated_body, { new: true }).then(result => {
+    return response.json(result)
+  }).catch(error => {
+    next(error)
+  })
 })
 
 app.delete('/api/persons/:id', (request, response, next) => {
-    Person.findByIdAndDelete(request.params.id).then(result => {
-        response.status(204).end()
-    }).catch(error => {
-        next(error)
-    }) 
+  Person.findByIdAndDelete(request.params.id).then(result => {
+    console.log(result)
+    response.status(204).end()
+  }).catch(error => {
+    next(error)
+  })
 })
 
 // Error handler middleware
 const errorHandler = (error, request, response, next) => {
-    console.error(error.message)
+  console.error(error.message)
 
-    if (error.name === 'CastError') {
-        return response.status(400).send({ error: 'malformatted id'})
-    } else if (error.name === 'ValidationError') {
-        return response.status(400).send({ error: error.message })
-    }
+  if (error.name === 'CastError') {
+    return response.status(400).send({ error: 'malformatted id' })
+  } else if (error.name === 'ValidationError') {
+    return response.status(400).send({ error: error.message })
+  }
 
-    next(error)
+  next(error)
 }
 app.use(errorHandler)
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
+  console.log(`Server running on port ${PORT}`)
 })

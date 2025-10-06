@@ -22,7 +22,7 @@ const App = () => {
     .then(initialPersons => {
       setPersons(initialPersons)
     }).catch(error =>
-      console.log(error)
+      next(error)
     )
   },[]);
 
@@ -80,8 +80,14 @@ const App = () => {
           }, 5000)
         })
         .catch(error => {
-          console.log(error)
-          alert('There was an error adding the person.')
+          console.log('Full error object:', error)
+          setNotification(`${error.response.data.error}`)
+          setError(true)
+
+          setTimeout(() => {
+            setNotification(null)
+            setError(null)
+          }, 5000)
         })
     }
   }
