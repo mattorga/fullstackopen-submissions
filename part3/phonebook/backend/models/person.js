@@ -13,37 +13,22 @@ mongoose.connect(url)
 
 const personSchema = new mongoose.Schema({
     id: String,
-    name: String,
-    number: String,
+    name: {
+        type: String,
+        minLength: 3,
+        required: true,
+    },
+    number: {
+        type: String,
+        minLength: 8,
+        validate: {
+            validator: function(v){
+                return /^\d{2,3}-\d+$/.test(v) && v.replace(/-/g, '').length >= 8;
+            },
+            message: props => `${props.value} is not a valid phone number!`
+        },
+        required: [true, 'User phone number required']
+    },
 })
 
 module.exports = mongoose.model('Person', personSchema)
-
-// if (process.argv.length < 4) {
-//     Person.find({}).then(result => {
-//         console.log("phonebook:")
-//         result.forEach(person => {
-//             console.log(`${person.name} ${person.number}`)
-//         })
-//         mongoose.connection.close()
-//     })
-// } else {
-//     const input_name = process.argv[2]
-//     const input_number = process.argv[3]
-
-//     const generateId = () => {
-//         const range = 100000
-//         return String(Math.trunc(Math.random() * range))
-//     }
-
-//     const person = new Person({
-//         id: generateId(),
-//         name: input_name,
-//         number: input_number,
-//     })
-
-//     person.save().then(result => {
-//         console.log(`added ${person.name} ${person.number} to phonebook`)
-//         mongoose.connection.close()
-//     })
-// }
