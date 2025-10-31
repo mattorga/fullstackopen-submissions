@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const config = require('./utils/config')
+
 const app = express();
 
 const blogSchema = mongoose.Schema({
@@ -12,8 +14,14 @@ const blogSchema = mongoose.Schema({
 
 const Blog = mongoose.model('Blog', blogSchema);
 
-const mongoUrl = 'mongodb+srv://fullstackopen:fullstackopen@blog-list.e4nirq4.mongodb.net/blog-list?appName=blog-list';
-mongoose.connect(mongoUrl);
+mongoose
+  .connect(config.MONGODB_URI)
+  .then(() => {
+    console.log('connected to MongoDB') // Convert to logger
+  })
+  .catch((error) => {
+    console.log('error connection to MongoDB', error.message) // Convert to logger
+  });
 
 app.use(express.json());
 
