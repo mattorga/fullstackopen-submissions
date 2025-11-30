@@ -1,5 +1,5 @@
 const assert = require('node:assert')
-const { test, after, beforeEach } = require('node:test')
+const { test, after, beforeEach, describe } = require('node:test')
 const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
@@ -20,7 +20,6 @@ test('blogs are returned as json', async () => {
     .expect('Content-Type', /application\/json/)
   
   assert.strictEqual(response.body.length, helper.initialBlogs.length)
-
 }) 
 
 test('unique identifier property is named \'id\'', async () => {
@@ -98,10 +97,77 @@ test('missing title or url property', async () => {
     .expect(400)
     .expect('Content-Type', /application\/json/)
   assert(response.body.error.includes('author'))
+})
 
+describe('deleting a blog', () => {
+  test('success with status code 204 if id is VALID', async () => {
+    const blogsAtStart = await helper.blogsInDb()
+    const blogToDelete = blogsAtStart[0]
 
+    await api
+      .delete(`/api/blogs/${blogToDelete.id}`)
+      .expect(204)
+    
+    const blogsAtEnd = await helper.blogsInDb()
 
-  
+    const ids = blogsAtEnd.map(blog => blog.id)
+    assert(!ids.includes(blogToDelete.id))
+  })
+
+  test('error with status code 400 if id is INVALID', async () => {
+    const blogsAtStart = await helper.blogsInDb()
+    const invalidId = 1
+
+    await api
+      .delete(`/api/blogs/${invalidId}`)
+      .expect(400)
+  })
+})
+
+describe('updating a blog', async () => {
+  test.only('success with status code 201 if id is VALID', async () => {
+    const blogsAtStart = await helper.blogsInDb()
+    const blogToUpdate = blogsAtStart[0]
+    
+    const updatedBlog = {
+      ...blogToUpdate,
+      title: 'updated',
+      likes: 0
+    }
+
+    await api
+      .put(`/api/blogs/${blogToUpdate.id}`)
+      .send(updatedBlog)
+      .expect(201)
+
+    const blogsAtEnd = await helper.blogsInDb()
+    const titles = blogsAtEnd.map(blog => blog.title)
+
+    assert.strictEqual(blogsAtStart.length, blogsAtEnd.length)
+    assert(titles.includes('updated'))
+  })
+
+  test.only('success with status code 400 if id is INVALID', async () => {
+    const blogsAtStart = await helper.blogsInDb()
+    const blogToUpdate = blogsAtStart[0]
+    
+    const updatedBlog = {
+      ...blogToUpdate,
+      title: 'updated',
+      likes: 0
+    }
+
+    await api
+      .put(`/api/blogs/1`)
+      .send(updatedBlog)
+      .expect(400)
+
+    const blogsAtEnd = await helper.blogsInDb()
+    const titles = blogsAtEnd.map(blog => blog.title)
+    
+    assert.strictEqual(blogsAtStart.length, blogsAtEnd.length)
+    assert(!titles.includes('updated'))
+  })
 })
 
 after(async () => {
