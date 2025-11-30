@@ -13,9 +13,11 @@ logger.info('connecting to', config.MONGODB_URI)
 mongoose
   .connect(config.MONGODB_URI)
   .then(() => {
+    console.log('connected to MongoDB')
     logger.info('connected to MongoDB') // Convert to logger
   })
   .catch((error) => {
+    console.log('error connection to MongoDB')
     logger.error('error connection to MongoDB', error.message) // Convert to logger
   });
 
@@ -30,7 +32,7 @@ app.use(middleware.errorHandler)
 
 module.exports = app
 
-const PORT = 3003
+const PORT = 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
